@@ -1,6 +1,7 @@
 package activities
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import fragments.CalculatorFormFragment
 import ir.ncis.kpjapp.ActivityEnhanced
@@ -9,6 +10,7 @@ import ir.ncis.kpjapp.R
 import ir.ncis.kpjapp.databinding.ActivityMainBinding
 import kotlinx.coroutines.launch
 import retrofit.calls.Auth
+import retrofit.calls.Base
 
 class MainActivity : ActivityEnhanced() {
     private lateinit var b: ActivityMainBinding
@@ -32,6 +34,15 @@ class MainActivity : ActivityEnhanced() {
     }
 
     private fun setupUi() {
-        supportFragmentManager.beginTransaction().replace(b.fragment.id, CalculatorFormFragment()).commit()
+        lifecycleScope.launch {
+            Base.content({
+                App.CONTENT = it
+                showFragment(CalculatorFormFragment())
+            })
+        }
+    }
+
+    fun showFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction().replace(b.fragment.id, fragment).commit()
     }
 }
