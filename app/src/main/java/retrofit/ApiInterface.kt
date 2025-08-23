@@ -12,6 +12,7 @@ import retrofit2.http.GET
 import retrofit2.http.OPTIONS
 import retrofit2.http.PATCH
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface ApiInterface {
 
@@ -29,7 +30,7 @@ interface ApiInterface {
     suspend fun baseContent(): Response<ResponseWrapper<BaseContent>>
 
     @GET("inquiry")
-    suspend fun inquiry(@Field("insurance_cover") insuranceCover: String, @Field("is_entry") isEntry: Int, @Field("birthdays") birthdays: String, @Field("start_at") startAt: String, @Field("end_at") endAt: String): Response<ResponseWrapper<Inquiry>>
+    suspend fun inquiry(@Query("insurance_cover") insuranceCover: String, @Query("is_entry") isEntry: Int,@Query("birthdays") birthdays: String, @Query("start_at") startAt: String, @Query("end_at") endAt: String): Response<ResponseWrapper<Inquiry>>
 
     @OPTIONS("inquiry")
     suspend fun inquiryOptions(): Response<ResponseWrapper<InquiryOption>>
