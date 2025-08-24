@@ -96,7 +96,7 @@
                         android:layout_height="48dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
-                        android:padding="4dp">
+                        android:paddingHorizontal="8dp">
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/tvBirthday"
@@ -170,7 +170,7 @@
                         android:layout_height="48dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
-                        android:padding="4dp">
+                        android:paddingHorizontal="8dp">
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/tvStart"
@@ -216,7 +216,7 @@
                         android:layout_height="48dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
-                        android:padding="4dp">
+                        android:paddingHorizontal="8dp">
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/tvEnd"
