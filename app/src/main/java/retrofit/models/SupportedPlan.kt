@@ -1,7 +1,7 @@
 package retrofit.models
 
-data class InquiryItem(
+data class SupportedPlan(
     val company: Company,
     val deductibles: List<Deductible>,
-    val plans: List<PlanWrapper>
+    val plans: List<PlanWrapper>,
 )

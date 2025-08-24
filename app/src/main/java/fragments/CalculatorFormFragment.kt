@@ -1,5 +1,6 @@
 package fragments
 
+import activities.MainActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -37,7 +38,7 @@ class CalculatorFormFragment : Fragment() {
         b.tvBirthday.text = currentDate
         b.tvInsuranceCoverLabel.text = App.CONTENT.calculatorFormCover
         lifecycleScope.launch {
-            Inquiry.options({
+            Inquiry.getInquiryFormOptions({
                 b.spInsuranceCover.adapter = ArrayAdapter(requireActivity(), android.R.layout.simple_spinner_item, it.insuranceCovers.map { cover -> NumberFormat.getNumberInstance(Locale.US).format(cover) })
             })
         }
@@ -49,5 +50,27 @@ class CalculatorFormFragment : Fragment() {
         b.cvBirthday.setOnClickListener { CalendarHelper.showDatePicker(b.tvBirthday.text.toString()) { b.tvBirthday.text = it } }
         b.cvStart.setOnClickListener { CalendarHelper.showDatePicker(b.tvStart.text.toString()) { b.tvStart.text = it } }
         b.cvEnd.setOnClickListener { CalendarHelper.showDatePicker(b.tvEnd.text.toString()) { b.tvEnd.text = it } }
+
+        b.btCheck.setOnClickListener {
+            val insuranceCover = b.spInsuranceCover.selectedItem.toString().replace(",", "").toInt()
+            val isEntry = if (b.spEntry.selectedItem.toString() == App.CONTENT.calculatorFormVisiting) 1 else 0
+            val birthdays = b.tvBirthday.text.toString()
+            val startAt = b.tvStart.text.toString()
+            val endAt = b.tvEnd.text.toString()
+            lifecycleScope.launch {
+                Inquiry.getSupportedPlans(
+                    insuranceCover,
+                    isEntry,
+                    birthdays,
+                    startAt,
+                    endAt,
+                    {
+                        App.SUPPORTED_PLANS = it
+                        (requireActivity() as MainActivity).showFragment(CalculateResultFragment())
+                    }
+                )
+            }
+
+        }
     }
 }

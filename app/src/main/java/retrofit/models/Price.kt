@@ -9,12 +9,11 @@ data class Price(
     @SerializedName("age_from")
     val ageFrom: Int,
     @SerializedName("age_to")
-    val ageTo: Int,
+    val ageTo: Int?,
     @SerializedName("insurance_cover")
     val insuranceCover: Int,
     @SerializedName("daily_cost")
-    val dailyCost: Double,
+    val dailyCost: Double?,
     @SerializedName("is_entry")
     val isEntry: Boolean,
-    val total: Double
 )

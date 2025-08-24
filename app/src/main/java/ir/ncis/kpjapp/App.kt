@@ -4,6 +4,7 @@ import android.app.Application
 import com.orhanobut.hawk.Hawk
 import helpers.KeyHelper
 import retrofit.models.BaseContent
+import retrofit.models.SupportedPlan
 
 class App : Application() {
     companion object {
@@ -11,6 +12,7 @@ class App : Application() {
         lateinit var ACTIVITY: ActivityEnhanced
 
         lateinit var CONTENT: BaseContent
+        lateinit var SUPPORTED_PLANS: List<SupportedPlan>
     }
 
     override fun onCreate() {

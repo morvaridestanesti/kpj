@@ -1,10 +1,10 @@
 package retrofit
 
 import retrofit.models.BaseContent
-import retrofit.models.Inquiry
 import retrofit.models.InquiryOption
 import retrofit.models.ResponseWrapper
 import retrofit.models.Session
+import retrofit.models.SupportedPlan
 import retrofit2.Response
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -30,8 +30,8 @@ interface ApiInterface {
     suspend fun baseContent(): Response<ResponseWrapper<BaseContent>>
 
     @GET("inquiry")
-    suspend fun inquiry(@Query("insurance_cover") insuranceCover: String, @Query("is_entry") isEntry: Int,@Query("birthdays") birthdays: String, @Query("start_at") startAt: String, @Query("end_at") endAt: String): Response<ResponseWrapper<Inquiry>>
+    suspend fun inquiryGetSupportedPlans(@Query("insurance_cover") insuranceCover: Int, @Query("is_entry") isEntry: Int, @Query("birthdays") birthdays: String, @Query("start_at") startAt: String, @Query("end_at") endAt: String): Response<ResponseWrapper<List<SupportedPlan>>>
 
     @OPTIONS("inquiry")
-    suspend fun inquiryOptions(): Response<ResponseWrapper<InquiryOption>>
+    suspend fun inquiryFormOptions(): Response<ResponseWrapper<InquiryOption>>
 }
