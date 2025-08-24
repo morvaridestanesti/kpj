@@ -13,6 +13,12 @@ class App : Application() {
 
         lateinit var CONTENT: BaseContent
         lateinit var SUPPORTED_PLANS: List<SupportedPlan>
+
+        var INSURANCE_COVER: Int = 0
+        var IS_ENTRY: Int = 1
+        lateinit var BIRTHDAYS: String
+        lateinit var START_AT: String
+        lateinit var END_AT: String
     }
 
     override fun onCreate() {

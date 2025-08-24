@@ -31,44 +31,37 @@ class CalculatorFormFragment : Fragment() {
 
         val currentDate = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
 
-        b.tvTitle.text = App.CONTENT.calculatorFormTitle
-        b.tvInsuranceLabel.text = App.CONTENT.calculatorFormEntry
-        b.spEntry.adapter = ArrayAdapter(requireActivity(), android.R.layout.simple_spinner_item, listOf(App.CONTENT.calculatorFormVisiting, App.CONTENT.calculatorFormTravel))
-        b.tvBirthdayLabel.text = App.CONTENT.calculatorFormBirthday
-        b.tvBirthday.text = currentDate
-        b.tvInsuranceCoverLabel.text = App.CONTENT.calculatorFormCover
+        b.form.tvTitle.text = App.CONTENT.calculatorFormTitle
+        b.form.tvInsuranceLabel.text = App.CONTENT.calculatorFormEntry
+        b.form.spEntry.adapter = ArrayAdapter(requireActivity(), android.R.layout.simple_spinner_item, listOf(App.CONTENT.calculatorFormVisiting, App.CONTENT.calculatorFormTravel))
+        b.form.tvBirthdayLabel.text = App.CONTENT.calculatorFormBirthday
+        b.form.tvBirthday.text = currentDate
+        b.form.tvInsuranceCoverLabel.text = App.CONTENT.calculatorFormCover
         lifecycleScope.launch {
             Inquiry.getInquiryFormOptions({
-                b.spInsuranceCover.adapter = ArrayAdapter(requireActivity(), android.R.layout.simple_spinner_item, it.insuranceCovers.map { cover -> NumberFormat.getNumberInstance(Locale.US).format(cover) })
+                b.form.spInsuranceCover.adapter = ArrayAdapter(requireActivity(), android.R.layout.simple_spinner_item, it.insuranceCovers.map { cover -> NumberFormat.getNumberInstance(Locale.US).format(cover) })
             })
         }
-        b.tvStartLabel.text = App.CONTENT.calculatorFormStart
-        b.tvStart.text = currentDate
-        b.tvEndLabel.text = App.CONTENT.calculatorFormEnd
-        b.tvEnd.text = currentDate
-        b.btCheck.text = App.CONTENT.calculatorFormSubmit
-        b.cvBirthday.setOnClickListener { CalendarHelper.showDatePicker(b.tvBirthday.text.toString()) { b.tvBirthday.text = it } }
-        b.cvStart.setOnClickListener { CalendarHelper.showDatePicker(b.tvStart.text.toString()) { b.tvStart.text = it } }
-        b.cvEnd.setOnClickListener { CalendarHelper.showDatePicker(b.tvEnd.text.toString()) { b.tvEnd.text = it } }
+        b.form.tvStartLabel.text = App.CONTENT.calculatorFormStart
+        b.form.tvStart.text = currentDate
+        b.form.tvEndLabel.text = App.CONTENT.calculatorFormEnd
+        b.form.tvEnd.text = currentDate
+        b.form.btCheck.text = App.CONTENT.calculatorFormSubmit
+        b.form.cvBirthday.setOnClickListener { CalendarHelper.showDatePicker(b.form.tvBirthday.text.toString()) { b.form.tvBirthday.text = it } }
+        b.form.cvStart.setOnClickListener { CalendarHelper.showDatePicker(b.form.tvStart.text.toString()) { b.form.tvStart.text = it } }
+        b.form.cvEnd.setOnClickListener { CalendarHelper.showDatePicker(b.form.tvEnd.text.toString()) { b.form.tvEnd.text = it } }
 
-        b.btCheck.setOnClickListener {
-            val insuranceCover = b.spInsuranceCover.selectedItem.toString().replace(",", "").toInt()
-            val isEntry = if (b.spEntry.selectedItem.toString() == App.CONTENT.calculatorFormVisiting) 1 else 0
-            val birthdays = b.tvBirthday.text.toString()
-            val startAt = b.tvStart.text.toString()
-            val endAt = b.tvEnd.text.toString()
+        b.form.btCheck.setOnClickListener {
+            App.INSURANCE_COVER = b.form.spInsuranceCover.selectedItem.toString().replace(",", "").toInt()
+            App.IS_ENTRY = if (b.form.spEntry.selectedItem.toString() == App.CONTENT.calculatorFormVisiting) 1 else 0
+            App.BIRTHDAYS = b.form.tvBirthday.text.toString()
+            App.START_AT = b.form.tvStart.text.toString()
+            App.END_AT = b.form.tvEnd.text.toString()
             lifecycleScope.launch {
-                Inquiry.getSupportedPlans(
-                    insuranceCover,
-                    isEntry,
-                    birthdays,
-                    startAt,
-                    endAt,
-                    {
-                        App.SUPPORTED_PLANS = it
-                        (requireActivity() as MainActivity).showFragment(CalculateResultFragment())
-                    }
-                )
+                Inquiry.getSupportedPlans({
+                    App.SUPPORTED_PLANS = it
+                    (requireActivity() as MainActivity).showFragment(CalculateResultFragment())
+                })
             }
         }
     }

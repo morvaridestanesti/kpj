@@ -4,8 +4,10 @@ import android.app.DatePickerDialog
 import ir.ncis.kpjapp.App
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import java.time.temporal.ChronoUnit
 import java.util.Calendar
 import java.util.Locale
+import kotlin.math.absoluteValue
 
 object CalendarHelper {
     fun showDatePicker(selectedDate: String? = null, onDateSelected: ((String) -> Unit)? = null) {
@@ -41,5 +43,12 @@ object CalendarHelper {
             day,
         )
         datePicker.show()
+    }
+
+    fun daysBetween(start: String, end: String): Int {
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+        val startDate = LocalDate.parse(start, formatter)
+        val endDate = LocalDate.parse(end, formatter)
+        return ChronoUnit.DAYS.between(startDate, endDate).absoluteValue.toInt() + 1
     }
 }

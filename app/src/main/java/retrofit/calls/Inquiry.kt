@@ -8,9 +8,9 @@ import retrofit.models.InquiryOption
 import retrofit.models.SupportedPlan
 
 object Inquiry {
-    suspend fun getSupportedPlans(insuranceCover: Int, isEntry: Int, birthdays: String, startAt: String, endAt: String, onSuccess: (supportedPlans: List<SupportedPlan>) -> Unit, onError: ((Exception) -> Unit)? = null) {
+    suspend fun getSupportedPlans(onSuccess: (supportedPlans: List<SupportedPlan>) -> Unit, onError: ((Exception) -> Unit)? = null) {
         try {
-            val response = ApiClient.API.inquiryGetSupportedPlans(insuranceCover, isEntry, birthdays, startAt, endAt)
+            val response = ApiClient.API.inquiryGetSupportedPlans(App.INSURANCE_COVER, App.IS_ENTRY, App.BIRTHDAYS, App.START_AT, App.END_AT)
             if (response.isSuccessful) {
                 val body = response.body()
                 if (body != null) {
@@ -25,7 +25,7 @@ object Inquiry {
             } else {
                 if (response.code() == 401) {
                     Auth.refresh({
-                        App.ACTIVITY.lifecycleScope.launch { getSupportedPlans(insuranceCover, isEntry, birthdays, startAt, endAt, onSuccess, onError) }
+                        App.ACTIVITY.lifecycleScope.launch { getSupportedPlans(onSuccess, onError) }
                     })
                 } else {
                     val errorMessage = response.errorBody()?.string() ?: "خطای ناشناخته"
