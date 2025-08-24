@@ -18,7 +18,7 @@ class AdapterRecyclerSupportedPlanCompany(private val supportedPlans: List<Suppo
     private val colorGray = ContextHelper.getColor(R.color.gray)
     private val colorGreen = ContextHelper.getColor(R.color.green)
     private val colorWhite = ContextHelper.getColor(R.color.white)
-    val marginPx = (4 * App.ACTIVITY.resources.displayMetrics.density).toInt() // 4dp in px
+    private val marginPx = (4 * App.ACTIVITY.resources.displayMetrics.density).toInt() // 4dp in px
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val b = AdapterRecyclerSupportedPlanBinding.inflate(LayoutInflater.from(parent.context), parent, false)
