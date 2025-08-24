@@ -30,10 +30,10 @@ class AdapterRecyclerSupportedPlanCompany(private val supportedPlans: List<Suppo
         val context = holder.itemView.context
 
         holder.b.tvCompany.text = item.company.name
-        holder.b.tlPlans.removeAllViews()
-
         holder.b.btBuy.text = App.CONTENT.calculatorResultBuy
         holder.b.tvDetails.text = App.CONTENT.calculatorResultDetails
+
+        holder.b.tlPlans.removeAllViews()
 
         // Header Row
         val headerRow = TableRow(context).apply { setBackgroundColor(colorWhite) }
