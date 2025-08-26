@@ -9,7 +9,7 @@
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/header1" />
+        app:srcCompat="@mipmap/header_calculator" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
