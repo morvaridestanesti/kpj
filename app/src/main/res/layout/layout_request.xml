@@ -89,6 +89,7 @@
                     android:layout_height="wrap_content"/>
 
                 <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/cbCheck"
                     android:layout_width="match_parent"
                     android:textStyle="bold"
                     android:text="Agree to the terms of service."
