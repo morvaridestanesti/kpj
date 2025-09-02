@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="HardcodedText"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="8dp">
+    android:layout_margin="8dp"
+    tools:ignore="HardcodedText">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,80 +28,54 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="120dp"
-                        android:layout_height="48dp"
-                        app:srcCompat="@mipmap/century" />
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:text="21st-century"
-                        android:textColor="@color/green"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
-                    android:text="Age on purchase date：30 \n Sum Insured：$100000 \nInsurance days：366 "
-                    android:layout_marginTop="16dp"
-                    android:layout_height="wrap_content"/>
+                <include layout="@layout/layout_information" />
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_marginTop="16dp"
                     android:layout_width="match_parent"
-                    app:srcCompat="@color/gray"
-                    android:layout_height="1dp"/>
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    app:srcCompat="@color/gray" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
-                    android:textSize="20sp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textColor="@color/green"
+                    android:layout_marginTop="16dp"
                     android:text="Terms of Service "
-                    android:layout_marginTop="16dp"
-                    android:layout_height="wrap_content"/>
+                    android:textColor="@color/green"
+                    android:textSize="20sp" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:text="When you agree and purchase the policy, it is \n assumed that you have understood the policy \n wording and agreed to the insurance terms."
-                    android:layout_marginTop="16dp"
-                    android:layout_height="wrap_content"/>
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
-                    android:textSize="14sp"
-                    android:textColor="@color/black"
-                    android:text="*After completing the online purchase, you will receive the official electronic policy via email within 1-24 hours *This website has been highly encrypted by SSL. Our online purchase is safe and fast. Please feel free to use it. \n*Before the effective date of the policy, you can cancel the policy at any time without reason or fee (super visa requires a government rejection letter) \n*If you have any questions, please consult us in detail before purchase. We provide service 24/7 at any time. *We assume legal responsibility for the above terms and conditions."
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:layout_height="wrap_content"/>
+                    android:text="*After completing the online purchase, you will receive the official electronic policy via email within 1-24 hours *This website has been highly encrypted by SSL. Our online purchase is safe and fast. Please feel free to use it. \n*Before the effective date of the policy, you can cancel the policy at any time without reason or fee (super visa requires a government rejection letter) \n*If you have any questions, please consult us in detail before purchase. We provide service 24/7 at any time. *We assume legal responsibility for the above terms and conditions."
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
 
                 <androidx.appcompat.widget.AppCompatCheckBox
                     android:id="@+id/cbCheck"
                     android:layout_width="match_parent"
-                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
                     android:text="Agree to the terms of service."
-                    android:layout_height="wrap_content"/>
+                    android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btNext"
                     android:layout_width="match_parent"
                     android:layout_height="72dp"
+                    android:layout_marginTop="16dp"
                     android:backgroundTint="@color/dark_gray"
                     android:text="Next"
-                    android:layout_marginTop="16dp"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="22sp"
