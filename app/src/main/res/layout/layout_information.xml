@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:padding="8dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -28,10 +28,10 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        android:text="Age on purchase date：30 \n Sum Insured：$100000 \nInsurance days：366 "
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_height="wrap_content"/>
+        android:text="Age on purchase date：30 \n Sum Insured：$100000 \nInsurance days：366 "
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
 </LinearLayout>

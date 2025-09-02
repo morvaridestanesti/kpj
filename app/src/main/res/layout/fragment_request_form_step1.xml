@@ -13,7 +13,7 @@
 
         <include
             android:id="@+id/form"
-            layout="@layout/layout_request" />
+            layout="@layout/layout_request_step1" />
 
         <include layout="@layout/layout_section" />
 
