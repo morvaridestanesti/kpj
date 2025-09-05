@@ -42,4 +42,5 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.hawk)
+    implementation(libs.picasso)
 }

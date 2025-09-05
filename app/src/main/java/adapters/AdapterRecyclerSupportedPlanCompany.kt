@@ -1,5 +1,6 @@
 package adapters
 
+import activities.MainActivity
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,6 +8,7 @@ import android.widget.TableRow
 import android.widget.TextView
 import androidx.core.view.setPadding
 import androidx.recyclerview.widget.RecyclerView
+import fragments.RequestFormStep1Fragment
 import helpers.ContextHelper
 import ir.ncis.kpjapp.App
 import ir.ncis.kpjapp.R
@@ -32,6 +34,11 @@ class AdapterRecyclerSupportedPlanCompany(private val supportedPlans: List<Suppo
         holder.b.tvCompany.text = item.company.name
         holder.b.btBuy.text = App.CONTENT.calculatorResultBuy
         holder.b.tvDetails.text = App.CONTENT.calculatorResultDetails
+
+        holder.b.btBuy.setOnClickListener {
+            App.PLAN = item
+            (App.ACTIVITY as MainActivity).showFragment(RequestFormStep1Fragment())
+        }
 
         holder.b.tlPlans.removeAllViews()
 
