@@ -48,13 +48,11 @@ class RequestFormStep1Fragment : Fragment() {
         b.form.information.tvDayLabel.text = App.CONTENT.inquiryDays
         val start = LocalDate.parse(App.START_AT)
         val end = LocalDate.parse(App.END_AT)
-        val days = Period.between(start, end).days
+        val days = Period.between(start, end).days + 1
         b.form.information.tvDay.text = days.toString()
 
         b.form.cbCheck.setOnCheckedChangeListener { _, isChecked ->
-            b.form.btNext.isEnabled = isChecked
-
-            val color = if (isChecked) R.color.green else R.color.gray
+            val color = if (isChecked) R.color.green else R.color.dark_gray
             b.form.btNext.backgroundTintList = AppCompatResources.getColorStateList(requireContext(), color)
 
             b.form.btNext.setOnClickListener {

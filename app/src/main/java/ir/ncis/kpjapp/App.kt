@@ -8,7 +8,7 @@ import retrofit.models.SupportedPlan
 
 class App : Application() {
     companion object {
-        const val BASE_URL = "https://kpjadmin.film-buff.ir/"
+        const val BASE_URL = "https://kpjadmin.film-buff.ir/uploads/"
         lateinit var TOKEN: String
         lateinit var ACTIVITY: ActivityEnhanced
 

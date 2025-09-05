@@ -12,78 +12,50 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <include layout="@layout/layout_step_wizard" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="Terms of Service "
+            android:textColor="@color/green"
+            android:textSize="20sp" />
 
-        <com.google.android.material.card.MaterialCardView
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="When you agree and purchase the policy, it is \n assumed that you have understood the policy \n wording and agreed to the insurance terms."
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="*After completing the online purchase, you will receive the official electronic policy via email within 1-24 hours *This website has been highly encrypted by SSL. Our online purchase is safe and fast. Please feel free to use it. \n*Before the effective date of the policy, you can cancel the policy at any time without reason or fee (super visa requires a government rejection letter) \n*If you have any questions, please consult us in detail before purchase. We provide service 24/7 at any time. *We assume legal responsibility for the above terms and conditions."
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cbCheck"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            app:cardCornerRadius="24dp"
-            app:contentPadding="16dp"
-            app:strokeColor="@color/gray"
-            app:strokeWidth="1dp">
+            android:text="Agree to the terms of service."
+            android:textStyle="bold" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <include
-                    android:id="@+id/information"
-                    layout="@layout/layout_information" />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="16dp"
-                    app:srcCompat="@color/gray" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="16dp"
-                    android:text="Terms of Service "
-                    android:textColor="@color/green"
-                    android:textSize="20sp" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="When you agree and purchase the policy, it is \n assumed that you have understood the policy \n wording and agreed to the insurance terms."
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="*After completing the online purchase, you will receive the official electronic policy via email within 1-24 hours *This website has been highly encrypted by SSL. Our online purchase is safe and fast. Please feel free to use it. \n*Before the effective date of the policy, you can cancel the policy at any time without reason or fee (super visa requires a government rejection letter) \n*If you have any questions, please consult us in detail before purchase. We provide service 24/7 at any time. *We assume legal responsibility for the above terms and conditions."
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-                <androidx.appcompat.widget.AppCompatCheckBox
-                    android:id="@+id/cbCheck"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Agree to the terms of service."
-                    android:textStyle="bold" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btNext"
-                    android:layout_width="match_parent"
-                    android:layout_height="72dp"
-                    android:layout_marginTop="16dp"
-                    android:backgroundTint="@color/dark_gray"
-                    android:text="Next"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    app:cornerRadius="12dp" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btNext"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/dark_gray"
+            android:text="Next"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp" />
     </LinearLayout>
 </ScrollView>
