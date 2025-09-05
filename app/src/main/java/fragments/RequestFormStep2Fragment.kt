@@ -8,10 +8,9 @@ import androidx.fragment.app.Fragment
 import ir.ncis.kpjapp.databinding.FragmentRequestFormStep2Binding
 
 class RequestFormStep2Fragment : Fragment() {
-
     private lateinit var b: FragmentRequestFormStep2Binding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         b = FragmentRequestFormStep2Binding.inflate(inflater, container, false)
         return b.root
     }

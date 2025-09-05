@@ -25,6 +25,7 @@
                 android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvStep1Label"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -35,6 +36,7 @@
                     android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvStep2Label"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -44,6 +46,7 @@
                     android:textSize="12sp" />
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvStep3Label"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -53,6 +56,7 @@
                     android:textSize="12sp" />
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvStep4Label"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -70,6 +74,7 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvStep1"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     app:cardBackgroundColor="@color/green"
@@ -78,6 +83,7 @@
                     app:strokeWidth="1dp">
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvStep1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -86,11 +92,13 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivStep2"
                     android:layout_width="64dp"
                     android:layout_height="1dp"
                     app:srcCompat="@color/gray" />
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvStep2"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     app:cardCornerRadius="12dp"
@@ -98,6 +106,7 @@
                     app:strokeWidth="1dp">
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvStep2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -106,11 +115,13 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivStep3"
                     android:layout_width="64dp"
                     android:layout_height="1dp"
                     app:srcCompat="@color/gray" />
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvStep3"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     app:cardCornerRadius="12dp"
@@ -118,6 +129,7 @@
                     app:strokeWidth="1dp">
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvStep3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -126,11 +138,13 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivStep4"
                     android:layout_width="64dp"
                     android:layout_height="1dp"
                     app:srcCompat="@color/gray" />
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvStep4"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     app:cardCornerRadius="12dp"
@@ -138,6 +152,7 @@
                     app:strokeWidth="1dp">
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvStep4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
