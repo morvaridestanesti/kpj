@@ -1,12 +1,12 @@
 package fragments
 
-import activities.MainActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
+import helpers.ContextHelper
+import helpers.UiHelper
 import ir.ncis.kpjapp.R
 import ir.ncis.kpjapp.databinding.FragmentRequestFormStep1Binding
 import viewmodels.StepViewModel
@@ -22,10 +22,10 @@ class RequestFormStep1Fragment(private val viewModel: StepViewModel) : Fragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        b.form.cbCheck.setOnCheckedChangeListener { _, isChecked ->
-            val color = if (isChecked) R.color.green else R.color.dark_gray
-            b.form.btNext.backgroundTintList = AppCompatResources.getColorStateList(requireContext(), color)
+        UiHelper.setContent(b, requireActivity())
 
+        b.form.cbAgree.setOnCheckedChangeListener { _, isChecked ->
+            b.form.btNext.setBackgroundColor(ContextHelper.getColor(if (isChecked) R.color.green else R.color.dark_gray))
             b.form.btNext.setOnClickListener {
                 if (isChecked) {
                     viewModel.step.value = 2
