@@ -13,6 +13,7 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -51,7 +52,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvPurchased"
+            android:id="@+id/tvPeople"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -72,7 +73,7 @@
             app:strokeWidth="1dp">
 
             <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/spPurchased"
+                android:id="@+id/spPeople"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:padding="4dp" />
@@ -125,7 +126,17 @@
             android:layout_marginEnd="8dp"
             app:cardCornerRadius="12dp"
             app:strokeColor="@color/black"
-            app:strokeWidth="1dp"></com.google.android.material.card.MaterialCardView>
+            app:strokeWidth="1dp">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etAddress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="top"
+                android:inputType="text"
+                android:padding="8dp" />
+        </com.google.android.material.card.MaterialCardView>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvCity"
@@ -146,7 +157,17 @@
             android:layout_marginEnd="8dp"
             app:cardCornerRadius="12dp"
             app:strokeColor="@color/black"
-            app:strokeWidth="1dp"></com.google.android.material.card.MaterialCardView>
+            app:strokeWidth="1dp">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etCity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="top"
+                android:inputType="text"
+                android:padding="8dp" />
+        </com.google.android.material.card.MaterialCardView>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvProvince"
@@ -195,7 +216,17 @@
             android:layout_marginEnd="8dp"
             app:cardCornerRadius="12dp"
             app:strokeColor="@color/black"
-            app:strokeWidth="1dp"></com.google.android.material.card.MaterialCardView>
+            app:strokeWidth="1dp">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etPostalCode"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="top"
+                android:inputType="text"
+                android:padding="8dp" />
+        </com.google.android.material.card.MaterialCardView>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvPhoneNumber"
@@ -216,7 +247,17 @@
             android:layout_marginEnd="8dp"
             app:cardCornerRadius="12dp"
             app:strokeColor="@color/black"
-            app:strokeWidth="1dp"></com.google.android.material.card.MaterialCardView>
+            app:strokeWidth="1dp">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="top"
+                android:inputType="text"
+                android:padding="8dp" />
+        </com.google.android.material.card.MaterialCardView>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvEmailAddress"
@@ -237,7 +278,17 @@
             android:layout_marginEnd="8dp"
             app:cardCornerRadius="12dp"
             app:strokeColor="@color/black"
-            app:strokeWidth="1dp"></com.google.android.material.card.MaterialCardView>
+            app:strokeWidth="1dp">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="top"
+                android:inputType="textEmailAddress"
+                android:padding="8dp" />
+        </com.google.android.material.card.MaterialCardView>
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="match_parent"
@@ -246,6 +297,7 @@
             app:srcCompat="@color/gray" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvInsured"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -255,122 +307,14 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvFirstName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:text="First Name"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            app:cardCornerRadius="12dp"
-            app:strokeColor="@color/black"
-            app:strokeWidth="1dp"></com.google.android.material.card.MaterialCardView>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvLastName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:text="Last Name"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            app:cardCornerRadius="12dp"
-            app:strokeColor="@color/black"
-            app:strokeWidth="1dp"></com.google.android.material.card.MaterialCardView>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvGender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:text="Gender"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <com.google.android.material.card.MaterialCardView
+        <LinearLayout
+            android:id="@+id/vgInsuredPeopleInformation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            app:cardCornerRadius="12dp"
-            app:strokeColor="@color/black"
-            app:strokeWidth="1dp">
-
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/spGender"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:padding="4dp" />
-        </com.google.android.material.card.MaterialCardView>
+            android:orientation="vertical" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvBirthdayLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:text="Date of Birthday"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            app:cardCornerRadius="12dp"
-            app:strokeColor="@color/black"
-            app:strokeWidth="1dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingHorizontal="8dp">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvBirthday"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:padding="4dp"
-                    app:srcCompat="@drawable/ic_calendar" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBeneficiaries"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -399,7 +343,17 @@
             android:layout_marginEnd="8dp"
             app:cardCornerRadius="12dp"
             app:strokeColor="@color/black"
-            app:strokeWidth="1dp"></com.google.android.material.card.MaterialCardView>
+            app:strokeWidth="1dp">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etFirstNameBeneficiaries"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="top"
+                android:inputType="text"
+                android:padding="8dp" />
+        </com.google.android.material.card.MaterialCardView>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvLastNameBeneficiaries"
@@ -420,7 +374,17 @@
             android:layout_marginEnd="8dp"
             app:cardCornerRadius="12dp"
             app:strokeColor="@color/black"
-            app:strokeWidth="1dp"></com.google.android.material.card.MaterialCardView>
+            app:strokeWidth="1dp">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etLastNameBeneficiaries"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="top"
+                android:inputType="text"
+                android:padding="8dp" />
+        </com.google.android.material.card.MaterialCardView>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvGenderBeneficiaries"
@@ -462,6 +426,7 @@
             android:textStyle="bold" />
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvBirthdayBeneficiaries"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginStart="8dp"
@@ -488,6 +453,7 @@
                     android:textSize="16sp" />
 
                 <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivBirthdayBeneficiaries"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:padding="4dp"
@@ -496,6 +462,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPolicy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -506,6 +473,7 @@
             android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPolicyDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -527,6 +495,7 @@
             android:textStyle="bold" />
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvInsuranceEffectiveDate"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginStart="8dp"
@@ -553,6 +522,7 @@
                     android:textSize="16sp" />
 
                 <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivInsuranceEffectiveDate"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:padding="4dp"
@@ -572,6 +542,7 @@
             android:textStyle="bold" />
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvInsuranceEndDate"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginStart="8dp"
@@ -598,6 +569,7 @@
                     android:textSize="16sp" />
 
                 <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivInsuranceEndDate"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:padding="4dp"
@@ -617,6 +589,7 @@
             android:textStyle="bold" />
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvArrival"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginStart="8dp"
@@ -643,6 +616,7 @@
                     android:textSize="16sp" />
 
                 <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivArrival"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:padding="4dp"

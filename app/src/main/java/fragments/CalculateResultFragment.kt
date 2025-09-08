@@ -1,5 +1,6 @@
 package fragments
 
+import activities.MainActivity
 import adapters.AdapterRecyclerSupportedPlanCompany
 import android.os.Bundle
 import android.view.LayoutInflater

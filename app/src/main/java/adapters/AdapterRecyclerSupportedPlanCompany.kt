@@ -8,7 +8,7 @@ import android.widget.TableRow
 import android.widget.TextView
 import androidx.core.view.setPadding
 import androidx.recyclerview.widget.RecyclerView
-import fragments.RequestFormStep1Fragment
+import fragments.FormFragment
 import helpers.ContextHelper
 import ir.ncis.kpjapp.App
 import ir.ncis.kpjapp.R
@@ -37,7 +37,7 @@ class AdapterRecyclerSupportedPlanCompany(private val supportedPlans: List<Suppo
 
         holder.b.btBuy.setOnClickListener {
             App.PLAN = item
-            (App.ACTIVITY as MainActivity).showFragment(RequestFormStep1Fragment())
+            (App.ACTIVITY as MainActivity).showFragment(FormFragment())
         }
 
         holder.b.tlPlans.removeAllViews()
