@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import helpers.CalendarHelper
 import helpers.UiHelper
 import ir.ncis.kpjapp.databinding.FragmentRequestFormStep2Binding
+import ir.ncis.kpjapp.databinding.LayoutPersonInformationBinding
 import kotlinx.coroutines.launch
 import retrofit.calls.Inquiry
 import viewmodels.StepViewModel
@@ -41,5 +43,28 @@ class RequestFormStep2Fragment(private val viewModel: StepViewModel) : Fragment(
         b.form.cvArrival.setOnClickListener { CalendarHelper.showDatePicker(b.form.tvArrival.text.toString()) { b.form.tvArrival.text = it } }
         b.form.btNext.setOnClickListener { viewModel.step.value = 3 }
         b.form.btBack.setOnClickListener { viewModel.step.value = 1 }
+
+        addPersonLayout(1)
+
+        b.form.spPeople.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, int: Long) {
+                addPersonLayout(parent?.getItemAtPosition(position).toString().toInt())
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+
+        }
+    }
+
+    private fun addPersonLayout(number: Int) {
+        b.form.vgInsuredPeopleInformation.removeAllViews()
+        for (i in 0 until number) {
+            b.form.vgInsuredPeopleInformation.addView(getLayoutPersonInformation().root)
+        }
+    }
+
+    private fun getLayoutPersonInformation(): LayoutPersonInformationBinding {
+        return LayoutPersonInformationBinding.inflate(layoutInflater)
     }
 }

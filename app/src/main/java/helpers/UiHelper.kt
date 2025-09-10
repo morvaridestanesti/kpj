@@ -20,7 +20,7 @@ import java.time.format.DateTimeFormatter
 object UiHelper {
     fun setContent(b: ViewBinding, context: Context) {
         when (b) {
-            is FragmentCalculatorFormBinding   -> {
+            is FragmentCalculatorFormBinding -> {
                 val currentDate = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
                 b.form.tvTitle.text = App.CONTENT.calculatorFormTitle
                 b.form.tvInsuranceLabel.text = App.CONTENT.calculatorFormEntry
@@ -50,7 +50,7 @@ object UiHelper {
                 b.form.btCheck.text = App.CONTENT.calculatorFormSubmit
             }
 
-            is FragmentFormBinding             -> {
+            is FragmentFormBinding -> {
                 Picasso.get().load(buildString {
                     append(App.BASE_URL)
                     append(App.PLAN.company.logo)
