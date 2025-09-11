@@ -2,6 +2,7 @@ package ir.ncis.kpjapp
 
 import android.app.Application
 import com.orhanobut.hawk.Hawk
+import dtos.DataCollection
 import helpers.KeyHelper
 import retrofit.models.BaseContent
 import retrofit.models.SupportedPlan
@@ -15,6 +16,7 @@ class App : Application() {
         lateinit var CONTENT: BaseContent
         lateinit var SUPPORTED_PLANS: List<SupportedPlan>
         lateinit var PLAN : SupportedPlan
+        val DTO = DataCollection()
 
         var INSURANCE_COVER: Int = 0
         var IS_ENTRY: Int = 1
