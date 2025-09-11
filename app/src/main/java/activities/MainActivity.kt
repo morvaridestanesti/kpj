@@ -1,9 +1,10 @@
 package activities
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import fragments.CalculatorFormFragment
+import fragments.RequestFormStep2Fragment
 import ir.ncis.kpjapp.ActivityEnhanced
 import ir.ncis.kpjapp.App
 import ir.ncis.kpjapp.R
@@ -11,6 +12,7 @@ import ir.ncis.kpjapp.databinding.ActivityMainBinding
 import kotlinx.coroutines.launch
 import retrofit.calls.Auth
 import retrofit.calls.Base
+import viewmodels.StepViewModel
 
 class MainActivity : ActivityEnhanced() {
     private lateinit var b: ActivityMainBinding
@@ -37,7 +39,8 @@ class MainActivity : ActivityEnhanced() {
         lifecycleScope.launch {
             Base.content({
                 App.CONTENT = it
-                showFragment(CalculatorFormFragment())
+                val viewModel: StepViewModel by viewModels()
+                showFragment(RequestFormStep2Fragment(viewModel))
             })
         }
     }

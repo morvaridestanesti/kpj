@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="HardcodedText"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:ignore="HardcodedText">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvFirstName"
@@ -28,6 +28,15 @@
         app:strokeColor="@color/black"
         app:strokeWidth="1dp">
 
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:inputType="text"
+            android:padding="8dp"
+            android:singleLine="true" />
     </com.google.android.material.card.MaterialCardView>
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -51,6 +60,15 @@
         app:strokeColor="@color/black"
         app:strokeWidth="1dp">
 
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etLastName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:inputType="text"
+            android:padding="8dp"
+            android:singleLine="true" />
     </com.google.android.material.card.MaterialCardView>
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -93,6 +111,7 @@
         android:textStyle="bold" />
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvBirthday"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"

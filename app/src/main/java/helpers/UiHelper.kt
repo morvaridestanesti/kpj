@@ -89,7 +89,7 @@ object UiHelper {
                 b.form.tvFamily.text = App.CONTENT.inquiryStep2Family
                 setupSpinner(b.form.spFamily, listOf(App.CONTENT.inquiryStep2No, App.CONTENT.inquiryStep2Yes))
                 b.form.tvPeople.text = App.CONTENT.inquiryStep2People
-                setupSpinner(b.form.spPeople, listOf(1..10).map { it.toString() })
+                setupSpinner(b.form.spPeople, (1..10).map { it.toString() })
                 b.form.tvAddress.text = App.CONTENT.inquiryStep2Cover
                 b.form.tvAddress.text = App.CONTENT.inquiryStep2Address
                 b.form.tvCity.text = App.CONTENT.inquiryStep2City
@@ -99,11 +99,11 @@ object UiHelper {
                 b.form.tvEmailAddress.text = App.CONTENT.inquiryStep2Email
                 b.form.tvInsured.text = App.CONTENT.inquiryStep2Insured
                 b.form.tvBeneficiaries.text = App.CONTENT.inquiryStep2Beneficiaries
-                b.form.tvFirstNameBeneficiaries.text = App.CONTENT.inquiryStep2FirstName
-                b.form.tvLastNameBeneficiaries.text = App.CONTENT.inquiryStep2LastName
-                b.form.tvGenderBeneficiaries.text = App.CONTENT.inquiryStep2Gender
-                setupSpinner(b.form.spGenderBeneficiaries, listOf(App.CONTENT.inquiryStep2Male, App.CONTENT.inquiryStep2Female))
-                b.form.tvBirthdayLabelBeneficiaries.text = App.CONTENT.inquiryStep2Birthday
+                b.form.vgBeneficiary.tvFirstName.text = App.CONTENT.inquiryStep2FirstName
+                b.form.vgBeneficiary.tvLastName.text = App.CONTENT.inquiryStep2LastName
+                b.form.vgBeneficiary.tvGender.text = App.CONTENT.inquiryStep2Gender
+                setupSpinner(b.form.vgBeneficiary.spGender, listOf(App.CONTENT.inquiryStep2Male, App.CONTENT.inquiryStep2Female))
+                b.form.vgBeneficiary.tvBirthdayLabel.text = App.CONTENT.inquiryStep2Birthday
                 b.form.tvPolicy.text = App.CONTENT.inquiryStep2Alert
                 b.form.tvPolicyDate.text = App.CONTENT.inquiryStep2Policy
                 b.form.tvInsuranceEffectiveDateLabel.text = App.CONTENT.inquiryStep2Start

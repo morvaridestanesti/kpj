@@ -15,7 +15,7 @@ object CalendarHelper {
         var year: Int
         var month: Int
         var day: Int
-        if (selectedDate == null) {
+        if (selectedDate.isNullOrBlank()) {
             year = calendar.get(Calendar.YEAR)
             month = calendar.get(Calendar.MONTH)
             day = calendar.get(Calendar.DAY_OF_MONTH)

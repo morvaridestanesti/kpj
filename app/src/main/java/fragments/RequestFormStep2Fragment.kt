@@ -5,10 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import helpers.CalendarHelper
 import helpers.UiHelper
+import ir.ncis.kpjapp.App
 import ir.ncis.kpjapp.databinding.FragmentRequestFormStep2Binding
 import ir.ncis.kpjapp.databinding.LayoutPersonInformationBinding
 import kotlinx.coroutines.launch
@@ -37,7 +39,7 @@ class RequestFormStep2Fragment(private val viewModel: StepViewModel) : Fragment(
             })
         }
 
-        b.form.cvBirthdayBeneficiaries.setOnClickListener { CalendarHelper.showDatePicker(b.form.tvBirthdayBeneficiaries.text.toString()) { b.form.tvBirthdayBeneficiaries.text = it } }
+        b.form.vgBeneficiary.cvBirthday.setOnClickListener { CalendarHelper.showDatePicker(b.form.vgBeneficiary.tvBirthday.text.toString()) { b.form.vgBeneficiary.tvBirthday.text = it } }
         b.form.cvInsuranceEffectiveDate.setOnClickListener { CalendarHelper.showDatePicker(b.form.tvInsuranceEffectiveDate.text.toString()) { b.form.tvInsuranceEffectiveDate.text = it } }
         b.form.cvInsuranceEndDate.setOnClickListener { CalendarHelper.showDatePicker(b.form.tvInsuranceEndDate.text.toString()) { b.form.tvInsuranceEndDate.text = it } }
         b.form.cvArrival.setOnClickListener { CalendarHelper.showDatePicker(b.form.tvArrival.text.toString()) { b.form.tvArrival.text = it } }
@@ -53,18 +55,20 @@ class RequestFormStep2Fragment(private val viewModel: StepViewModel) : Fragment(
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
-
         }
     }
 
     private fun addPersonLayout(number: Int) {
         b.form.vgInsuredPeopleInformation.removeAllViews()
-        for (i in 0 until number) {
-            b.form.vgInsuredPeopleInformation.addView(getLayoutPersonInformation().root)
+        (0 until number).forEach { i ->
+            b.form.vgInsuredPeopleInformation.addView(getLayoutPersonInformation())
         }
     }
 
-    private fun getLayoutPersonInformation(): LayoutPersonInformationBinding {
-        return LayoutPersonInformationBinding.inflate(layoutInflater)
+    private fun getLayoutPersonInformation(): View {
+        val binding = LayoutPersonInformationBinding.inflate(layoutInflater)
+        binding.spGender.adapter = ArrayAdapter(requireActivity(), android.R.layout.simple_spinner_item, listOf(App.CONTENT.inquiryStep2Male, App.CONTENT.inquiryStep2Female))
+        binding.cvBirthday.setOnClickListener { CalendarHelper.showDatePicker(binding.tvBirthday.text.toString()) { binding.tvBirthday.text = it } }
+        return binding.root
     }
 }
