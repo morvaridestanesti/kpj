@@ -13,6 +13,7 @@ import ir.ncis.kpjapp.databinding.FragmentCalculatorResultBinding
 import ir.ncis.kpjapp.databinding.FragmentFormBinding
 import ir.ncis.kpjapp.databinding.FragmentRequestFormStep1Binding
 import ir.ncis.kpjapp.databinding.FragmentRequestFormStep2Binding
+import ir.ncis.kpjapp.databinding.FragmentRequestFormStep3Binding
 import java.time.LocalDate
 import java.time.Period
 import java.time.format.DateTimeFormatter
@@ -109,6 +110,9 @@ object UiHelper {
                 b.form.tvInsuranceEffectiveDateLabel.text = App.CONTENT.inquiryStep2Start
                 b.form.tvInsuranceEndDateLabel.text = App.CONTENT.inquiryStep2End
                 b.form.tvArrivalLabel.text = App.CONTENT.inquiryStep2Arrival
+            }
+
+            is FragmentRequestFormStep3Binding -> {
             }
         }
     }

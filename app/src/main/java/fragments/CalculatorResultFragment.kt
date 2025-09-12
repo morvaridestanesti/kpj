@@ -46,7 +46,13 @@ class CalculatorResultFragment : Fragment() {
             App.START_AT = b.form.tvStart.text.toString()
             App.END_AT = b.form.tvEnd.text.toString()
             lifecycleScope.launch {
-                Inquiry.getSupportedPlans({
+                Inquiry.getSupportedPlans(
+                    App.INSURANCE_COVER,
+                    App.IS_ENTRY,
+                    App.BIRTHDAYS,
+                    App.START_AT,
+                    App.END_AT,
+                    {
                     App.SUPPORTED_PLANS = it
                     b.rvSupportedPlans.adapter = AdapterRecyclerSupportedPlanCompany(it, CalendarHelper.daysBetween(App.START_AT, App.END_AT))
                 })
