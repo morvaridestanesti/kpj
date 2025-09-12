@@ -167,7 +167,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
             app:cardCornerRadius="24dp"
-            app:contentPadding="16dp"
             app:strokeColor="@color/gray"
             app:strokeWidth="1dp">
 
@@ -183,7 +182,7 @@
                 <androidx.fragment.app.FragmentContainerView
                     android:id="@+id/formFragment"
                     android:layout_width="match_parent"
-                    tools:layout="@layout/fragment_request_form_step1"
+                    tools:layout="@layout/fragment_request_form_step4"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>

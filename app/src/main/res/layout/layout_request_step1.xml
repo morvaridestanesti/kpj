@@ -18,9 +18,19 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
-            android:text="Terms of Service "
+            android:text="Terms of Service"
             android:textColor="@color/green"
             android:textSize="20sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDescriptionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:justificationMode="inter_word"
+            android:text="When you agree and purchase the policy, it is \n assumed that you have understood the policy \n wording and agreed to the insurance terms."
+            android:textColor="@color/black"
+            android:textSize="14sp" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvDescription"
@@ -28,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:justificationMode="inter_word"
-            android:text="When you agree and purchase the policy, it is \n assumed that you have understood the policy \n wording and agreed to the insurance terms."
+            android:text="*After completing the online purchase, you will receive\nthe official electronic policy via email within 1-24 hours\n*This website has been highly encrypted by SSL. Our\nonline purchase is safe and fast. Please feel free to use\nit\n.*Before the effective date of the policy, you can cancel\nthe policy at any time without reason or fee (super visa\nrequires a government rejection letter)\n*If you have any questions, please consult us in detail\nbefore purchase. We provide service 24/7 at any time.\n*We assume legal responsibility for the above terms\nand conditions."
             android:textColor="@color/black"
             android:textSize="14sp" />
 
