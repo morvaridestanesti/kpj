@@ -164,7 +164,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@null"
-                android:gravity="top"
                 android:inputType="text"
                 android:padding="8dp" />
         </com.google.android.material.card.MaterialCardView>
