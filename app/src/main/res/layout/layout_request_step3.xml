@@ -330,7 +330,7 @@
             app:strokeWidth="1dp">
 
             <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/spAmount"
+                android:id="@+id/spPayment"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:padding="4dp" />
@@ -358,7 +358,7 @@
             app:strokeWidth="1dp">
 
             <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etAddress"
+                android:id="@+id/etCardNumber"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@null"
@@ -418,7 +418,7 @@
             app:strokeWidth="1dp">
 
             <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/tvNameOnCard"
+                android:id="@+id/etNameOnCard"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@null"
@@ -447,7 +447,7 @@
             app:strokeWidth="1dp">
 
             <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/tvExpiration"
+                android:id="@+id/etExpiration"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@null"

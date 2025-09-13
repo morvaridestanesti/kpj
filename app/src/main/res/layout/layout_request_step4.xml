@@ -9,7 +9,7 @@
     tools:ignore="HardcodedText">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvTitle"
+        android:id="@+id/tvDear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -20,7 +20,7 @@
         android:textStyle="bold" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvDescriptionTitle"
+        android:id="@+id/tvMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -31,7 +31,7 @@
         android:textSize="18sp" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvKpj"
+        android:id="@+id/tvThanks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -51,7 +51,7 @@
         app:cardCornerRadius="12dp">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/btNext"
+            android:id="@+id/btBack"
             android:layout_width="match_parent"
             android:layout_height="72dp"
             android:background="@color/green"

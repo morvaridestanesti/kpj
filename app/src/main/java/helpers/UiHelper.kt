@@ -14,6 +14,7 @@ import ir.ncis.kpjapp.databinding.FragmentFormBinding
 import ir.ncis.kpjapp.databinding.FragmentRequestFormStep1Binding
 import ir.ncis.kpjapp.databinding.FragmentRequestFormStep2Binding
 import ir.ncis.kpjapp.databinding.FragmentRequestFormStep3Binding
+import ir.ncis.kpjapp.databinding.FragmentRequestFormStep4Binding
 import java.time.LocalDate
 import java.time.Period
 import java.time.format.DateTimeFormatter
@@ -113,6 +114,26 @@ object UiHelper {
             }
 
             is FragmentRequestFormStep3Binding -> {
+                b.form.tvTitle.text = App.CONTENT.inquiryStep3Title
+                b.form.tvFullName.text = App.CONTENT.inquiryStep3FullName
+                b.form.tvGender.text = App.CONTENT.inquiryStep3Gender
+                b.form.tvBirthday.text = App.CONTENT.inquiryStep3Birthday
+                b.form.tvInsured.text = App.CONTENT.inquiryStep3Insured
+                b.form.tvBeneficiaryInsured.text = App.CONTENT.inquiryStep3Beneficiaries
+                b.form.tvInsurancePolicyDate.text = App.CONTENT.inquiryStep3Policy
+                b.form.tvInsuranceEffectiveDate.text = App.CONTENT.inquiryStep3Start
+                b.form.tvInsuranceEndDate.text = App.CONTENT.inquiryStep3End
+                b.form.tvArrival.text = App.CONTENT.inquiryStep3Arrival
+                b.form.tvPayment.text = App.CONTENT.inquiryStep3Methods
+                setupSpinner(b.form.spPayment, listOf(App.CONTENT.inquiryStep3Credit, App.CONTENT.inquiryStep3Bank))
+                b.form.tvCardNumber.text = App.CONTENT.inquiryStep3CardNumber
+                b.form.tvExpirationLabel.text = App.CONTENT.inquiryStep3CardExpiration
+            }
+
+            is FragmentRequestFormStep4Binding -> {
+                b.form.tvDear.text = App.CONTENT.inquiryStep4Greeting
+                b.form.tvMessage.text = App.CONTENT.inquiryStep4Message
+                b.form.tvThanks.text = App.CONTENT.inquiryStep4Thanks
             }
         }
     }
