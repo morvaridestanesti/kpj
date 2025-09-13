@@ -1,5 +1,7 @@
 package dtos
 
+import ir.ncis.kpjapp.App
+
 data class DataCollection(
     var address: String = "",
     var arrivedAt: String = "",
@@ -15,7 +17,7 @@ data class DataCollection(
     var firstNames: String = "",
     var genders: String = "",
     var insuranceCover: Int = 0,
-    var isEntry: Boolean = true,
+    var isEntry: Int = App.IS_ENTRY,
     var lastNames: String = "",
     var message: String? = null,
     var phone: String? = null,

@@ -40,7 +40,7 @@ class RequestFormStep3Fragment(private val viewModel: StepViewModel) : Fragment(
                 handlers += async(Dispatchers.IO) {
                     Inquiry.getSupportedPlans(
                         App.DTO.insuranceCover,
-                        if (App.DTO.isEntry) 1 else 0,
+                        App.DTO.isEntry,
                         birthday,
                         App.DTO.startedAt,
                         App.DTO.endedAt,

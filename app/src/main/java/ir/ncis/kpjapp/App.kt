@@ -15,14 +15,15 @@ class App : Application() {
 
         lateinit var CONTENT: BaseContent
         lateinit var SUPPORTED_PLANS: List<SupportedPlan>
-        lateinit var PLAN : SupportedPlan
-        val DTO = DataCollection()
+        lateinit var PLAN: SupportedPlan
 
         var INSURANCE_COVER: Int = 0
         var IS_ENTRY: Int = 1
         lateinit var BIRTHDAYS: String
         lateinit var START_AT: String
         lateinit var END_AT: String
+
+        val DTO = DataCollection()
     }
 
     override fun onCreate() {
