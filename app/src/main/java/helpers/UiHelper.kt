@@ -22,7 +22,7 @@ import java.time.format.DateTimeFormatter
 object UiHelper {
     fun setContent(b: ViewBinding, context: Context) {
         when (b) {
-            is FragmentCalculatorFormBinding -> {
+            is FragmentCalculatorFormBinding   -> {
                 val currentDate = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
                 b.form.tvTitle.text = App.CONTENT.calculatorFormTitle
                 b.form.tvInsuranceLabel.text = App.CONTENT.calculatorFormEntry
@@ -52,7 +52,7 @@ object UiHelper {
                 b.form.btCheck.text = App.CONTENT.calculatorFormSubmit
             }
 
-            is FragmentFormBinding -> {
+            is FragmentFormBinding             -> {
                 Picasso.get().load(buildString {
                     append(App.BASE_URL)
                     append(App.PLAN.company.logo)
@@ -115,9 +115,18 @@ object UiHelper {
 
             is FragmentRequestFormStep3Binding -> {
                 b.form.tvTitle.text = App.CONTENT.inquiryStep3Title
-                b.form.tvFullName.text = App.CONTENT.inquiryStep3FullName
-                b.form.tvGender.text = App.CONTENT.inquiryStep3Gender
-                b.form.tvBirthday.text = App.CONTENT.inquiryStep3Birthday
+                b.form.beneficiary.tvFullName.text = buildString {
+                    append(App.CONTENT.inquiryStep3FullName)
+                    append(":")
+                }
+                b.form.beneficiary.tvGender.text = buildString {
+                    append(App.CONTENT.inquiryStep3Gender)
+                    append(":")
+                }
+                b.form.beneficiary.tvBirthday.text = buildString {
+                    append(App.CONTENT.inquiryStep3Birthday)
+                    append(":")
+                }
                 b.form.tvInsured.text = App.CONTENT.inquiryStep3Insured
                 b.form.tvBeneficiaryInsured.text = App.CONTENT.inquiryStep3Beneficiaries
                 b.form.tvInsurancePolicyDate.text = App.CONTENT.inquiryStep3Policy

@@ -4,5 +4,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class StepViewModel : ViewModel() {
-    var step = MutableLiveData(1)
+    // TODO: Reset this to 1
+    var step = MutableLiveData(3)
 }

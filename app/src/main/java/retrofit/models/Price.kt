@@ -16,4 +16,5 @@ data class Price(
     val dailyCost: Double?,
     @SerializedName("is_entry")
     val isEntry: Boolean,
+    val total: Double?,
 )

@@ -30,6 +30,7 @@ class FormFragment : Fragment() {
     }
 
     private fun observe() {
+        val colorGray = ContextHelper.getColor(R.color.gray)
         val colorGreen = ContextHelper.getColor(R.color.green)
         val colorBlack = ContextHelper.getColor(R.color.black)
         val colorWhite = ContextHelper.getColor(R.color.white)
@@ -45,6 +46,10 @@ class FormFragment : Fragment() {
                     b.cvStep2.setCardBackgroundColor(colorWhite)
                     b.cvStep3.setCardBackgroundColor(colorWhite)
                     b.cvStep4.setCardBackgroundColor(colorWhite)
+                    b.cvStep1.strokeColor = colorGreen
+                    b.cvStep2.strokeColor = colorGray
+                    b.cvStep3.strokeColor = colorGray
+                    b.cvStep4.strokeColor = colorGray
                     b.tvStep1.setTextColor(colorWhite)
                     b.tvStep2.setTextColor(colorBlack)
                     b.tvStep3.setTextColor(colorBlack)
@@ -61,6 +66,10 @@ class FormFragment : Fragment() {
                     b.cvStep2.setCardBackgroundColor(colorGreen)
                     b.cvStep3.setCardBackgroundColor(colorWhite)
                     b.cvStep4.setCardBackgroundColor(colorWhite)
+                    b.cvStep1.strokeColor = colorGray
+                    b.cvStep2.strokeColor = colorGreen
+                    b.cvStep3.strokeColor = colorGray
+                    b.cvStep4.strokeColor = colorGray
                     b.tvStep1.setTextColor(colorBlack)
                     b.tvStep2.setTextColor(colorWhite)
                     b.tvStep3.setTextColor(colorBlack)
@@ -77,6 +86,10 @@ class FormFragment : Fragment() {
                     b.cvStep2.setCardBackgroundColor(colorWhite)
                     b.cvStep3.setCardBackgroundColor(colorGreen)
                     b.cvStep4.setCardBackgroundColor(colorWhite)
+                    b.cvStep1.strokeColor = colorGray
+                    b.cvStep2.strokeColor = colorGray
+                    b.cvStep3.strokeColor = colorGreen
+                    b.cvStep4.strokeColor = colorGray
                     b.tvStep1.setTextColor(colorBlack)
                     b.tvStep2.setTextColor(colorBlack)
                     b.tvStep3.setTextColor(colorWhite)
