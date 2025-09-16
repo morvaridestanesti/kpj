@@ -14,6 +14,7 @@ data class Price(
     val insuranceCover: Int,
     @SerializedName("daily_cost")
     val dailyCost: Double?,
+    val total: Double?,
     @SerializedName("is_entry")
     val isEntry: Boolean,
 )
