@@ -33,6 +33,7 @@ import java.util.Locale
 
 class RequestFormStep3Fragment(private val viewModel: StepViewModel) : Fragment() {
     private lateinit var b: FragmentRequestFormStep3Binding
+    private val allCheckBoxes = mutableListOf<CheckBox>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         b = FragmentRequestFormStep3Binding.inflate(inflater, container, false)
@@ -202,8 +203,14 @@ class RequestFormStep3Fragment(private val viewModel: StepViewModel) : Fragment(
                         setBackgroundColor(colorWhite)
                         setTextColor(colorBlack)
                         setPadding(0, dimen16dp, 0, dimen16dp)
+                        tag = buildString {
+                            append(deductible.id)
+                            append("-")
+                            append(currentPlan.prices[0].id)
+                        }
                     }
                     .also {
+                        allCheckBoxes += it
                         checkBoxes += it
                         tableRow.addView(it)
                     }
@@ -219,6 +226,15 @@ class RequestFormStep3Fragment(private val viewModel: StepViewModel) : Fragment(
                 if (button.isChecked && fromUser) {
                     checkBoxes.filter { it != checkBox }.forEach { it.isChecked = false }
                 }
+                val deductibleIds = mutableListOf<Int>()
+                val priceIds = mutableListOf<Int>()
+                allCheckBoxes.filter { it.isChecked }.forEach {
+                    val ids = (it.tag as String).split("-").toList()
+                    deductibleIds += ids[0].toInt()
+                    priceIds += ids[1].toInt()
+                }
+                App.DTO.deductibleIds = deductibleIds.joinToString(",")
+                App.DTO.priceIds = priceIds.joinToString(",")
             }
         }
 
