@@ -2,6 +2,7 @@ package helpers
 
 import adapters.AdapterRecyclerSupportedPlanCompany
 import android.content.Context
+import android.text.Html
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,7 +23,7 @@ import java.time.format.DateTimeFormatter
 object UiHelper {
     fun setContent(b: ViewBinding, context: Context) {
         when (b) {
-            is FragmentCalculatorFormBinding   -> {
+            is FragmentCalculatorFormBinding -> {
                 val currentDate = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
                 b.form.tvTitle.text = App.CONTENT.calculatorFormTitle
                 b.form.tvInsuranceLabel.text = App.CONTENT.calculatorFormEntry
@@ -52,7 +53,7 @@ object UiHelper {
                 b.form.btCheck.text = App.CONTENT.calculatorFormSubmit
             }
 
-            is FragmentFormBinding             -> {
+            is FragmentFormBinding -> {
                 Picasso.get().load(buildString {
                     append(App.BASE_URL)
                     append(App.PLAN.company.logo)
@@ -140,9 +141,15 @@ object UiHelper {
             }
 
             is FragmentRequestFormStep4Binding -> {
-                b.form.tvDear.text = App.CONTENT.inquiryStep4Greeting
-                b.form.tvMessage.text = App.CONTENT.inquiryStep4Message
-                b.form.tvThanks.text = App.CONTENT.inquiryStep4Thanks
+                b.form.tvDear.text = buildString {
+                    append(App.CONTENT.inquiryStep4Greeting)
+                    append(" ")
+                    append(App.DTO.firstNames.split(",")[0])
+                    append(" ")
+                    append(App.DTO.lastNames.split(",")[0])
+                }
+                b.form.tvMessage.text = Html.fromHtml(App.CONTENT.inquiryStep4Message, Html.FROM_HTML_MODE_LEGACY)
+                b.form.tvThanks.text = Html.fromHtml(App.CONTENT.inquiryStep4Thanks, Html.FROM_HTML_MODE_LEGACY)
             }
         }
     }

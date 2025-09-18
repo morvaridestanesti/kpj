@@ -10,6 +10,15 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <ProgressBar
+            android:id="@+id/pbLoading"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_gravity="center"
+            android:layout_marginVertical="96dp"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/green" />
+
         <include
             android:id="@+id/form"
             layout="@layout/layout_request_step4" />
