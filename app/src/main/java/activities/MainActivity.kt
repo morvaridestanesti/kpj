@@ -49,6 +49,7 @@ class MainActivity : ActivityEnhanced() {
                     arrivedAt = "2026-01-01"
                     birthdays = "1982-11-28,1955-07-04,2010-01-01"
                     city = "Toronto"
+                    deductibleIds = "14,17"
                     email = "test@mysite.com"
                     endedAt = "2026-01-31"
                     firstNames = "Mohammad,Morvarid,FR"
@@ -58,6 +59,7 @@ class MainActivity : ActivityEnhanced() {
                     lastNames = "Shahraki,Estanesti,Sh"
                     phone = "12345"
                     postalCode = "67890"
+                    priceIds = "1017,705"
                     provinceId = 1
                     startedAt = "2026-01-01"
                 }

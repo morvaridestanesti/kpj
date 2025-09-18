@@ -109,7 +109,13 @@ class RequestFormStep3Fragment(private val viewModel: StepViewModel) : Fragment(
             supportedPlans.forEach { birthday, plan ->
                 b.form.vgPlans.addView(createPlanSelectionCardView(requireActivity(), plan.find { supportedPlan -> supportedPlan.company.id == App.PLAN.company.id }!!))
             }
-            b.form.btNext.setOnClickListener { viewModel.step.value = 4 }
+            b.form.btNext.setOnClickListener {
+                App.DTO.cardNumber = b.form.etCardNumber.editableText.toString()
+                App.DTO.cardCVV = b.form.etCvv.editableText.toString()
+                App.DTO.cardName = b.form.etNameOnCard.editableText.toString()
+                App.DTO.cardExpiration = b.form.etExpiration.editableText.toString()
+                viewModel.step.value = 4
+            }
             b.form.btBack.setOnClickListener { viewModel.step.value = 2 }
         }
     }
