@@ -14,7 +14,7 @@ import ir.ncis.kpjapp.databinding.FragmentRequestFormStep4Binding
 import kotlinx.coroutines.launch
 import retrofit.calls.Inquiry
 
-class RequestFormStep4Fragment() : Fragment() {
+class RequestFormStep4Fragment : Fragment() {
     private lateinit var b: FragmentRequestFormStep4Binding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
