@@ -32,6 +32,7 @@ android {
             jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
         }
     }
+    lint.disable.add("NotificationPermission")
 }
 
 dependencies {

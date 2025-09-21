@@ -29,11 +29,9 @@ class RequestFormStep4Fragment() : Fragment() {
 
         lifecycleScope.launch {
             val deductibleIds = App.DTO.deductibleIds.split(",").toMutableList()
-            deductibleIds += deductibleIds.last()
-            App.DTO.deductibleIds = deductibleIds.joinToString(",")
+            App.DTO.deductibleIds = (deductibleIds + deductibleIds.last()).joinToString(",")
             val priceIds = App.DTO.priceIds.split(",").toMutableList()
-            priceIds += priceIds.last()
-            App.DTO.priceIds = priceIds.joinToString(",")
+            App.DTO.priceIds = (priceIds + priceIds.last()).joinToString(",")
             Inquiry.submit(
                 App.DTO,
                 {
