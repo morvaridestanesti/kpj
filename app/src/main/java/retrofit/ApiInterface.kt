@@ -34,4 +34,11 @@ interface ApiInterface {
 
     @OPTIONS("inquiry")
     suspend fun inquiryFormOptions(): Response<ResponseWrapper<InquiryOption>>
+
+    @FormUrlEncoded
+    @POST("inquiry")
+    suspend fun submit(
+        @Field("address") address : String,
+        @Field("arrived_at") arrivedAt : String,
+    )
 }

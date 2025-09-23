@@ -30,6 +30,7 @@ class FormFragment : Fragment() {
     }
 
     private fun observe() {
+        val colorGray = ContextHelper.getColor(R.color.gray)
         val colorGreen = ContextHelper.getColor(R.color.green)
         val colorBlack = ContextHelper.getColor(R.color.black)
         val colorWhite = ContextHelper.getColor(R.color.white)
@@ -82,6 +83,25 @@ class FormFragment : Fragment() {
                     b.tvStep3.setTextColor(colorWhite)
                     b.tvStep4.setTextColor(colorBlack)
                     childFragmentManager.beginTransaction().replace(b.formFragment.id, RequestFormStep3Fragment(stepViewModel)).commit()
+                }
+                4 -> {
+                    b.tvStep1Label.setTextColor(colorBlack)
+                    b.tvStep2Label.setTextColor(colorBlack)
+                    b.tvStep3Label.setTextColor(colorBlack)
+                    b.tvStep4Label.setTextColor(colorGreen)
+                    b.cvStep1.setCardBackgroundColor(colorWhite)
+                    b.cvStep2.setCardBackgroundColor(colorWhite)
+                    b.cvStep3.setCardBackgroundColor(colorWhite)
+                    b.cvStep4.setCardBackgroundColor(colorGreen)
+                    b.cvStep1.strokeColor = colorGray
+                    b.cvStep2.strokeColor = colorGray
+                    b.cvStep3.strokeColor = colorGray
+                    b.cvStep4.strokeColor = colorGreen
+                    b.tvStep1.setTextColor(colorBlack)
+                    b.tvStep2.setTextColor(colorBlack)
+                    b.tvStep3.setTextColor(colorBlack)
+                    b.tvStep4.setTextColor(colorWhite)
+                    childFragmentManager.beginTransaction().replace(b.formFragment.id, RequestFormStep4Fragment()).commit()
                 }
             }
         }
