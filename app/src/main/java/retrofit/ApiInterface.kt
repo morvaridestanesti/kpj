@@ -38,7 +38,28 @@ interface ApiInterface {
     @FormUrlEncoded
     @POST("inquiry")
     suspend fun submit(
-        @Field("address") address : String,
-        @Field("arrived_at") arrivedAt : String,
-    )
+        @Field("address") address: String,
+        @Field("arrived_at") arrivedAt: String,
+        @Field("birthdays") birthdays: String,
+        @Field("card_cvv") cardCvv: String,
+        @Field("card_expiration") cardExpiration: String,
+        @Field("card_name") cardName: String,
+        @Field("card_number") cardNumber: String,
+        @Field("city") city: String,
+        @Field("deductivble_ids") deductibleIds: String,
+        @Field("email") email: String,
+        @Field("ended_at") endedAt: String,
+        @Field("first_names") firstNames: String,
+        @Field("genders") genders: String,
+        @Field("insurance_cover") insuranceCover: Int,
+        @Field("is_entry") isEntry: Int,
+        @Field("last_names") lastNames: String,
+        @Field("message") message: String,
+        @Field("phone") phone: String,
+        @Field("postal_code") postalCode: String,
+        @Field("price_ids") priceIds: String,
+        @Field("province_id") provinceId: Int,
+        @Field("started_at") startedAt: String,
+        @Field("transfer_password") transferPassword: String,
+    ): Response<ResponseWrapper<Void?>>
 }

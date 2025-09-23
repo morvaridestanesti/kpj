@@ -1,5 +1,7 @@
 package fragments
 
+import activities.MainActivity
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -31,8 +33,21 @@ class RequestFormStep4Fragment: Fragment() {
             val priceIds = App.DTO.priceIds.split(",").toMutableList()
             App.DTO.priceIds = (priceIds + priceIds.last()).joinToString(",")
             Inquiry.submit(
-
+                App.DTO,
+                {
+                    b.pbLoading.visibility = View.GONE
+                    b.form.vgRoot.visibility = View.VISIBLE
+                },
+                {
+                    AlertDialog.Builder(requireActivity())
+                        .setMessage(it.message)
+                        .show()
+                }
             )
+        }
+
+        b.form.btBack.setOnClickListener {
+            (requireActivity() as MainActivity).showFragment(CalculatorFormFragment())
         }
     }
 }
